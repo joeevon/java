@@ -1,7 +1,7 @@
-package com.joee.helloworld;
+package com.joee.HelloWorld;
 
 /**
- * Created by joee on 2017/9/16.
+ * Created by joee on 2017/9/20.
  */
 public class HelloWorld {
     public static void main(String[] args) {
