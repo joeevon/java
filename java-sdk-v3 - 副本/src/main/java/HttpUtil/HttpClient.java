@@ -3,6 +3,7 @@ package HttpUtil;
 /**
  * Created by joee on 2017/9/25.
  */
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -68,6 +69,6 @@ public class HttpClient {
 
     public static void main(String[] args) throws Exception {
         HttpClient client = new HttpClient();
-        client.connect("192.168.212.54", 8844);
+        client.connect("127.0.0.1", 8844);
     }
 }
