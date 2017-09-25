@@ -34,7 +34,7 @@ public class TestWXPay {
         data.put("total_fee", "1");
         data.put("spbill_create_ip", "123.12.12.123");
         data.put("notify_url", "http://http://www.yiaitech.com/wxpay/notify");
-        data.put("time_expire", "20170925000000");
+        data.put("time_expire", "20170930000000");
 //      data.put("sign", "3foptz6c3zk3lh28jd5vpu0q8y4umnai");
 //      data.put("product_id", "12");
 
