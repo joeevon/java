@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: commons-codec-1.9.jar slf4j-simple-1.7.21.jar httpclient-4
- .5.3.jar commons-logging-1.2.jar httpcore-4.4.6.jar slf4j-api-1.7.21.
- jar
-Main-Class: weipay.TestWXPay
-
