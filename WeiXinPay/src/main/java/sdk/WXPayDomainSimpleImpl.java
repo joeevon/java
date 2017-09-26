@@ -1,11 +1,10 @@
 package sdk;
 import org.apache.http.conn.ConnectTimeoutException;
 
-import sdk.*;
-
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * Created by blaketang on 2017/6/16.
  */

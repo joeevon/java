@@ -5,16 +5,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-import sdk.*;
-
-public class WXPayConfigImpl extends WXPayConfig {
+public class WXPayConfigImpl extends WXPayConfig{
 
     private byte[] certData;
     private static WXPayConfigImpl INSTANCE;
 
-    private WXPayConfigImpl() throws Exception {
+    private WXPayConfigImpl() throws Exception{
         String certPath = "D://CERT/common/apiclient_cert.p12";
-//        String certPath = "/home/joee/java/wxPay/cert/apiclient_cert.p12";
+//        String certPath = "/home/root/CERT/apiclient_cert.p12";
         File file = new File(certPath);
         InputStream certStream = new FileInputStream(file);
         this.certData = new byte[(int) file.length()];
@@ -22,7 +20,7 @@ public class WXPayConfigImpl extends WXPayConfig {
         certStream.close();
     }
 
-    public static WXPayConfigImpl getInstance() throws Exception {
+    public static WXPayConfigImpl getInstance() throws Exception{
         if (INSTANCE == null) {
             synchronized (WXPayConfigImpl.class) {
                 if (INSTANCE == null) {
