@@ -27,7 +27,7 @@ public class WxOrder {
         return "20170930000000";
     }
 
-    public String UnifiedOrder() {
+    public String UnifiedOrder(String Openid) {
         HashMap<String, String> data = new HashMap<String, String>();
         data.put("body", "益爱海蓓课程支付");
         data.put("out_trade_no", GetTradeNo());
@@ -37,7 +37,7 @@ public class WxOrder {
         data.put("notify_url", "http://test.letiantian.me/wxpay/notify");
         data.put("trade_type", "JSAPI");
         data.put("time_expire", GetExpireTime());
-        data.put("openid", "oMDigwQEv-nmXH29CIt0Hx5uCw3o");
+        data.put("openid", Openid);
 
         try {
             Map<String, String> r = wxpay.unifiedOrder(data);
@@ -53,7 +53,7 @@ public class WxOrder {
     public static void main(String[] args) throws Exception {
         System.out.println("WxOrder begin.\n");
         WeiXinOrder.WxOrder order = new WeiXinOrder.WxOrder();
-        order.UnifiedOrder();
+        order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o");
         System.out.println("\nWxOrder end.");
     }
 }

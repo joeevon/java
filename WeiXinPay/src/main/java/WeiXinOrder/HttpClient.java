@@ -46,7 +46,7 @@ public class HttpClient {
             ChannelFuture f = b.connect(host, port).sync();
 
             URI uri = new URI("http://127.0.0.1:8844");
-            String msg = "Are you ok?";
+            String msg = "oMDigwQEv-nmXH29CIt0Hx5uCw3o";
             DefaultFullHttpRequest request = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET,
                     uri.toASCIIString(), Unpooled.wrappedBuffer(msg.getBytes("UTF-8")));
 
@@ -57,6 +57,7 @@ public class HttpClient {
             request.headers().set("messageType", "normal");
             request.headers().set("businessType", "testServerState");
             // 发送http请求
+            System.out.println("client send request.");
             f.channel().write(request);
             f.channel().flush();
 

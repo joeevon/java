@@ -14,11 +14,11 @@ public class HttpClientInboundHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("ack");
+        System.out.println("recv server respond.");
         if (msg instanceof HttpResponse)
         {
             HttpResponse response = (HttpResponse) msg;
-            System.out.println("CONTENT_TYPE:" + response.headers().get(HttpHeaders.Names.CONTENT_TYPE));
+//            System.out.println("CONTENT_TYPE:" + response.headers().get(HttpHeaders.Names.CONTENT_TYPE));
         }
         if(msg instanceof HttpContent)
         {

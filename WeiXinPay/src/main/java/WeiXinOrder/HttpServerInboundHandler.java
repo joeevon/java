@@ -46,13 +46,15 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
             content.release();
             WeiXinOrder.WxOrder order = new WeiXinOrder.WxOrder();
             if (reader.isEnd()) {
+                System.out.println("recv client request.");
                 String resultStr = new String(reader.readFull());
 //                System.out.println("Client said:" + resultStr);
-                String res = order.UnifiedOrder();
+                String res = order.UnifiedOrder(resultStr);
                 FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res.getBytes()));
                 response.headers().set(CONTENT_TYPE, "text/plain");
                 response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
                 response.headers().set(CONNECTION, Values.KEEP_ALIVE);
+                System.out.print("respond server.");
                 ctx.write(response);
                 ctx.flush();
             }

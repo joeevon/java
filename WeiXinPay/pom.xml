@@ -99,8 +99,8 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>WeiXinOrder.WxOrder</mainClass>
-                            <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
+                            <!--<mainClass>WeiXinOrder.WxOrder</mainClass>-->
+                            <mainClass>WeiXinOrder.HttpClient</mainClass>
                             <!--<mainClass>WeiXinOrder.HttpServer</mainClass>-->
                         </manifest>
                     </archive>
