@@ -19,7 +19,7 @@ public class WxPayDemo {
         wxpay = new WXPay(config);
         total_fee = "1";
         // out_trade_no = "201701017496748980290321";
-        out_trade_no = "201413091059590000003433-asd002";
+        out_trade_no = "201413091059590000003433-asd007";
     }
 
     /**

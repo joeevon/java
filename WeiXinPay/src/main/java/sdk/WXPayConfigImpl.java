@@ -5,12 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-public class WXPayConfigImpl extends WXPayConfig{
+public class WXPayConfigImpl extends WXPayConfig {
 
     private byte[] certData;
     private static WXPayConfigImpl INSTANCE;
 
-    private WXPayConfigImpl() throws Exception{
+    private WXPayConfigImpl() throws Exception {
         String certPath = "D://CERT/common/apiclient_cert.p12";
 //        String certPath = "/home/root/CERT/apiclient_cert.p12";
         File file = new File(certPath);
@@ -20,7 +20,7 @@ public class WXPayConfigImpl extends WXPayConfig{
         certStream.close();
     }
 
-    public static WXPayConfigImpl getInstance() throws Exception{
+    public static WXPayConfigImpl getInstance() throws Exception {
         if (INSTANCE == null) {
             synchronized (WXPayConfigImpl.class) {
                 if (INSTANCE == null) {
@@ -32,15 +32,15 @@ public class WXPayConfigImpl extends WXPayConfig{
     }
 
     public String getAppID() {
-        return "wxab8acb865bb1637e";
+        return "wx7d69cc6664fea758";
     }
 
     public String getMchID() {
-        return "11473623";
+        return "1488647162";
     }
 
     public String getKey() {
-        return "2ab9071b06b9f739b950ddb41db2690d";
+        return "3foptz6c3zk3lh28jd5vpu0q8y4umnai";
     }
 
     public InputStream getCertStream() {

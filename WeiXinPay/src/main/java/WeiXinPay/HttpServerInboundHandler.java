@@ -3,6 +3,7 @@ package WeiXinPay;
 /**
  * Created by joee on 2017/9/25.
  */
+
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONNECTION;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
@@ -49,8 +50,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
                 String resultStr = new String(reader.readFull());
 //                System.out.println("Client said:" + resultStr);
                 String res = dodo.doUnifiedOrder();
-                FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res
-                        .getBytes()));
+                FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res.getBytes()));
                 response.headers().set(CONTENT_TYPE, "text/plain");
                 response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
                 response.headers().set(CONNECTION, Values.KEEP_ALIVE);
