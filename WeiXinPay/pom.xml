@@ -5,8 +5,8 @@
     <groupId>WeiXinPay</groupId>
     <artifactId>WeiXinPay</artifactId>
     <version>0.0.3</version>
-    <name>WeiXinPay</name>
-    <description>WeiXinPay</description>
+    <name>WeiXinOrder</name>
+    <description>WeiXinOrder</description>
     <url>https://github.com/wxpay/WXPay-SDK-Java</url>
     <properties>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
@@ -99,7 +99,9 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>WeiXinPay.WeiXinPay</mainClass>
+                            <mainClass>WeiXinOrder.WxOrder</mainClass>
+                            <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
+                            <!--<mainClass>WeiXinOrder.HttpServer</mainClass>-->
                         </manifest>
                     </archive>
                 </configuration>
