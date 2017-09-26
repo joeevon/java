@@ -40,7 +40,11 @@ public class HttpServer {
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
+<<<<<<< HEAD:WeiXinPay/src/main/java/HttpUtil/HttpServer.java
             ChannelFuture f = b.bind("192.168.212.54", port).sync();
+=======
+            ChannelFuture f = b.bind("127.0.0.1", port).sync();
+>>>>>>> 2783b9c0007f4f4bd3d849612951e6b86c08a02a:java-sdk-v3 - 副本/src/main/java/HttpUtil/HttpServer.java
 
             f.channel().closeFuture().sync();
         } finally {

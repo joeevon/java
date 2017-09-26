@@ -3,6 +3,7 @@ package HttpUtil;
 /**
  * Created by joee on 2017/9/25.
  */
+
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONNECTION;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
