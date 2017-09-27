@@ -47,7 +47,7 @@ public class MinaClient {
         /*
          * 4.根据IP和端口号连接到服务器
          */
-        future = connector.connect(new InetSocketAddress("127.0.0.1", 8888));
+        future = connector.connect(new InetSocketAddress("127.0.0.1", 8005));
         // 等待连接创建完成
         future.awaitUninterruptibly();
 

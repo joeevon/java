@@ -108,9 +108,9 @@
                         <manifest>
                             <!--<mainClass>WeiXinOrder.WxOrder</mainClass>-->
                             <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
-                            <!--<mainClass>WeiXinOrder.HttpServer</mainClass>-->
+                            <mainClass>WeiXinOrder.HttpServer</mainClass>
                             <!--<mainClMina.MinaServerrver</mainClass>-->
-                            <mainClass>Mina.MinaClientEntry</mainClass>
+                            <!--<mainClass>Mina.MinaClientEntry</mainClass>-->
                         </manifest>
                     </archive>
                 </configuration>

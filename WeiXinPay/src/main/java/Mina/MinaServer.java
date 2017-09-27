@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 public class MinaServer {
     private static final Logger log = LoggerFactory.getLogger(MinaServer.class);
-    private static final int Port = 8888;
+    private static final int Port = 8005;
 
     public static void main(String[] args) {
         IoAcceptor ioAcceptor = new NioSocketAcceptor();
