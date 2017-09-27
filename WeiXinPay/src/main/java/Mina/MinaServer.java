@@ -2,7 +2,7 @@
  * Created by joee on 2017/9/27.
  */
 
-package WeiXinOrder;
+package Mina;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

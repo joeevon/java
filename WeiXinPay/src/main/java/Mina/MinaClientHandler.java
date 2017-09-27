@@ -2,7 +2,7 @@
  * Created by joee on 2017/9/27.
  */
 
-package WeiXinOrder;
+package Mina;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;

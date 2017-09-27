@@ -2,9 +2,7 @@
  * Created by joee on 2017/9/27.
  */
 
-package WeiXinOrder;
-
-import WeiXinOrder.MinaClient;
+package Mina;
 
 public class MinaClientEntry {
     public static void main(String[] args) {
