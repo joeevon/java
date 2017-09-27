@@ -44,7 +44,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
             ByteBuf content = httpContent.content();
             reader.reading(content);
             content.release();
-            WeiXinOrder.WxOrder order = new WeiXinOrder.WxOrder();
+            WxUnifiedOrder order = new WxUnifiedOrder();
             if (reader.isEnd()) {
                 String resultStr = new String(reader.readFull());
                 log.info("recv client request, data:" + resultStr);

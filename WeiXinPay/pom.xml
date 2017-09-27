@@ -106,7 +106,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <!--<mainClass>WeiXinOrder.WxOrder</mainClass>-->
+                            <!--<mainClWeiXinOrder.WxUnifiedOrderedOrderrder</mainClass>-->
                             <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
                             <mainClass>WeiXinOrder.HttpServer</mainClass>
                             <!--<mainClMina.MinaServerrver</mainClass>-->

@@ -10,11 +10,11 @@ import sdk.WXPayConfigImpl;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WxOrder {
+public class WxUnifiedOrder {
     private WXPay wxpay;
     private WXPayConfigImpl config;
 
-    public WxOrder() throws Exception {
+    public WxUnifiedOrder() throws Exception {
         config = WXPayConfigImpl.getInstance();
         wxpay = new WXPay(config);
     }
@@ -51,9 +51,9 @@ public class WxOrder {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("WxOrder begin.\n");
-        WeiXinOrder.WxOrder order = new WeiXinOrder.WxOrder();
+        System.out.println("WxUnifiedOrder begin.\n");
+        WxUnifiedOrder order = new WxUnifiedOrder();
         order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o");
-        System.out.println("\nWxOrder end.");
+        System.out.println("\nWxUnifiedOrder end.");
     }
 }

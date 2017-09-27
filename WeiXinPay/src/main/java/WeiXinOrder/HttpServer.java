@@ -40,7 +40,7 @@ public class HttpServer {
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-            ChannelFuture f = b.bind("127.0.0.1", port).sync();
+            ChannelFuture f = b.bind("172.17.134.132", port).sync();
 
             f.channel().closeFuture().sync();
         } finally {
