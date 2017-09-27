@@ -1,4 +1,4 @@
-package com.github.wxpay.sdk;
+package sdk;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import com.github.wxpay.sdk.WXPayConstants.SignType;
+import sdk.WXPayConstants.SignType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

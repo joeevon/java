@@ -1,10 +1,11 @@
 package weipay;
-import com.github.wxpay.sdk.*;
+
+import sdk.WXPay;
+import sdk.WXPayConfigImpl;
+import sdk.WXPayUtil;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayConfig;
 
 public class TestWXPay {
 
@@ -83,7 +84,6 @@ public class TestWXPay {
             e.printStackTrace();
         }
     }
-
 
 
     /**
@@ -178,7 +178,7 @@ public class TestWXPay {
      * 小测试
      */
     public void test001() {
-        String xmlStr="<xml><return_code><![CDATA[SUCCESS]]></return_code>\n" +
+        String xmlStr = "<xml><return_code><![CDATA[SUCCESS]]></return_code>\n" +
                 "<return_msg><![CDATA[OK]]></return_msg>\n" +
                 "<appid><![CDATA[wx273fe72f2db863ed]]></appid>\n" +
                 "<mch_id><![CDATA[1228845802]]></mch_id>\n" +
@@ -216,12 +216,12 @@ public class TestWXPay {
     public void testUnifiedOrderSpeed() throws Exception {
         TestWXPay dodo = new TestWXPay();
 
-        for (int i=0; i<100; ++i) {
+        for (int i = 0; i < 100; ++i) {
             long startTs = System.currentTimeMillis();
-            out_trade_no = out_trade_no+i;
+            out_trade_no = out_trade_no + i;
             dodo.doUnifiedOrder();
             long endTs = System.currentTimeMillis();
-            System.out.println(endTs-startTs);
+            System.out.println(endTs - startTs);
             Thread.sleep(1000);
         }
 
@@ -232,7 +232,7 @@ public class TestWXPay {
         TestWXPay dodo = new TestWXPay();
         // dodo.doGetSandboxSignKey();
 
-         dodo.doUnifiedOrder();
+        dodo.doUnifiedOrder();
         // dodo.doOrderQuery();
         // dodo.doDownloadBill();
         // dodo.doShortUrl();
@@ -250,7 +250,6 @@ public class TestWXPay {
 //        dodo.doOrderQuery();
 //        dodo.doOrderReverse();
 //        dodo.doOrderQuery();
-
 
 
         System.out.println("<---------------"); // wx2016112510573077

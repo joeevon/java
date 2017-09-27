@@ -39,7 +39,7 @@ maven:
 ## 示例
 配置类MyConfig:
 ```java
-import com.github.wxpay.sdk.WXPayConfig;
+import WXPayConfig;
 import java.io.*;
 
 public class MyConfig implements WXPayConfig{
@@ -85,7 +85,7 @@ public class MyConfig implements WXPayConfig{
 统一下单：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -121,7 +121,7 @@ public class WXPayExample {
 
 订单查询：
 ```java
-import com.github.wxpay.sdk.WXPay;
+import WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -150,7 +150,7 @@ public class WXPayExample {
 退款查询：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -179,7 +179,7 @@ public class WXPayExample {
 下载对账单：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -210,8 +210,8 @@ public class WXPayExample {
 
 暂时不支持下载压缩格式的对账单，但可以使用该SDK生成请求用的XML数据：
 ```java
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayUtil;
+import WXPay;
+import WXPayUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -242,8 +242,8 @@ public class WXPayExample {
 收到支付结果通知时，需要验证签名，可以这样做：
 ```java
 
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayUtil;
+import WXPay;
+import WXPayUtil;
 
 import java.util.Map;
 
@@ -273,8 +273,8 @@ public class WXPayExample {
 
 HTTPS请求默认使用MD5算法签名，若需要使用HMAC-SHA256：
 ```
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayConstants;
+import WXPay;
+import WXPayConstants;
 
 public class WXPayExample {
 
@@ -288,8 +288,8 @@ public class WXPayExample {
 
 若需要使用sandbox环境：
 ```
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayConstants;
+import WXPay;
+import WXPayConstants;
 
 public class WXPayExample {
 

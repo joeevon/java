@@ -1,4 +1,4 @@
-package com.github.wxpay.sdk;
+package sdk;
 
 /**
  * 常量

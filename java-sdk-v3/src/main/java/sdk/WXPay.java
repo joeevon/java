@@ -1,9 +1,9 @@
-package com.github.wxpay.sdk;
+package sdk;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.github.wxpay.sdk.WXPayConstants.SignType;
+import sdk.WXPayConstants.SignType;
 
 public class WXPay {
 
