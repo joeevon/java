@@ -48,6 +48,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
             if (reader.isEnd()) {
                 System.out.println("recv client request.");
                 String resultStr = new String(reader.readFull());
+//                String resultStr = "oMDigwQEv-nmXH29CIt0Hx5uCw3o";
 //                System.out.println("Client said:" + resultStr);
                 String res = order.UnifiedOrder(resultStr);
                 FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res.getBytes()));

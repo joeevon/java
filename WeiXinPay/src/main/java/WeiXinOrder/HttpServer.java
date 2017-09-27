@@ -51,7 +51,7 @@ public class HttpServer {
 
     public static void main(String[] args) throws Exception {
         HttpServer server = new HttpServer();
-        log.info("Http Server listening on 8844 ...");
-        server.start(8844);
+        log.info("Http Server listening on 8005 ...");
+        server.start(8005);
     }
 }

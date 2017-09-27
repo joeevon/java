@@ -35,6 +35,13 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.21</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.mina/mina-core -->
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+
     </dependencies>
     <licenses>
         <license>
@@ -100,8 +107,10 @@
                     <archive>
                         <manifest>
                             <!--<mainClass>WeiXinOrder.WxOrder</mainClass>-->
-                            <mainClass>WeiXinOrder.HttpClient</mainClass>
+                            <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
                             <!--<mainClass>WeiXinOrder.HttpServer</mainClass>-->
+                            <!--<mainClass>WeiXinOrder.MinaServer</mainClass>-->
+                            <mainClass>WeiXinOrder.MinaClientEntry</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
