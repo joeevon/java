@@ -4,6 +4,8 @@
 
 package WeiXinOrder;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import sdk.WXPay;
 import sdk.WXPayConfigImpl;
 
@@ -11,6 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WxUnifiedOrder {
+
+    private static Log log = LogFactory.getLog(WxUnifiedOrder.class);
     private WXPay wxpay;
     private WXPayConfigImpl config;
 
@@ -20,11 +24,30 @@ public class WxUnifiedOrder {
     }
 
     private String GetTradeNo() {
-        return "201413091059590000003433-asd005";
+        long l = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(l);
+        java.sql.Timestamp time = new java.sql.Timestamp(l);
+
+        String TradeNo = Integer.toString(date.getYear() + 1900) + String.format("%02d", date.getMonth() + 1)
+                + String.format("%02d", date.getDate()) + "-" + String.format("%02d", time.getHours())
+                + String.format("%02d", time.getMinutes()) + String.format("%02d", time.getSeconds())
+                + "-" + Long.toString(l);
+
+        log.info("TradeNo:" + TradeNo);
+        return TradeNo;
     }
 
     private String GetExpireTime() {
-        return "20170930000000";
+        long l = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(l + 15 * 60 * 1000);
+        java.sql.Timestamp time = new java.sql.Timestamp(l + 15 * 60 * 1000);
+
+        String ExpireTime = Integer.toString(date.getYear() + 1900) + String.format("%02d", date.getMonth() + 1)
+                + String.format("%02d", date.getDate()) + String.format("%02d", time.getHours())
+                + String.format("%02d", time.getMinutes()) + String.format("%02d", time.getSeconds());
+
+        log.info("ExpireTime:" + ExpireTime);
+        return ExpireTime;
     }
 
     public String UnifiedOrder(String Openid) {
