@@ -37,7 +37,7 @@ public class HttpClient {
                     ch.pipeline().addLast(new HttpResponseDecoder());
                     // 客户端发送的是httprequest，所以要使用HttpRequestEncoder进行编码
                     ch.pipeline().addLast(new HttpRequestEncoder());
-                    ch.pipeline().addLast(new HttpClientInboundHandler());
+                    ch.pipeline().addLast(new ClientHandler());
                 }
             });
 
@@ -45,7 +45,7 @@ public class HttpClient {
             ChannelFuture f = b.connect(host, port).sync();
 
             URI uri = new URI("http://127.0.0.1:8005");
-            String msg = "oMDigwQEv-nmXH29CIt0Hx5uCw3o";
+            String msg = "oMDigwQEv-nmXH29CIt0Hx5uCw3o,1";
             DefaultFullHttpRequest request = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET,
                     uri.toASCIIString(), Unpooled.wrappedBuffer(msg.getBytes("UTF-8")));
 

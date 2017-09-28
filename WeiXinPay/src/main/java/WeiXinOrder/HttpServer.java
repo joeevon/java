@@ -35,12 +35,13 @@ public class HttpServer {
                             ch.pipeline().addLast(new HttpResponseEncoder());
                             // server端接收到的是httpRequest，所以要使用HttpRequestDecoder进行解码
                             ch.pipeline().addLast(new HttpRequestDecoder());
-                            ch.pipeline().addLast(new HttpServerInboundHandler());
+                            ch.pipeline().addLast(new ServerHandler());
                         }
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-            ChannelFuture f = b.bind("172.17.134.132", port).sync();
+//            ChannelFuture f = b.bind("172.17.134.132", port).sync();
+            ChannelFuture f = b.bind("127.0.0.1", port).sync();
 
             f.channel().closeFuture().sync();
         } finally {
