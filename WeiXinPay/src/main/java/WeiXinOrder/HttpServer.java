@@ -22,7 +22,7 @@ public class HttpServer {
 
     private static Log log = LogFactory.getLog(HttpServer.class);
 
-    public void start(int port) throws Exception {
+    public void start() throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -40,8 +40,9 @@ public class HttpServer {
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-//            ChannelFuture f = b.bind("172.17.134.132", port).sync();
-            ChannelFuture f = b.bind("127.0.0.1", port).sync();
+//            ChannelFuture f = b.bind("172.17.134.132", 8005).sync();
+            ChannelFuture f = b.bind("172.17.134.132", 8006).sync();
+            log.info("Http Server begin.");
 
             f.channel().closeFuture().sync();
         } finally {
@@ -52,7 +53,6 @@ public class HttpServer {
 
     public static void main(String[] args) throws Exception {
         HttpServer server = new HttpServer();
-        log.info("Http Server listening on 8005 ...");
-        server.start(8005);
+        server.start();
     }
 }

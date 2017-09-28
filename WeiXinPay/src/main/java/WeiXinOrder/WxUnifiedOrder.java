@@ -86,7 +86,7 @@ public class WxUnifiedOrder {
     public static void main(String[] args) throws Exception {
         log.info("WxUnifiedOrder begin.");
         WxUnifiedOrder order = new WxUnifiedOrder();
-        order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o, 299");
+        order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o, 1");
         log.info("WxUnifiedOrder end.");
     }
 }
