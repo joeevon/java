@@ -17,10 +17,19 @@ public class WxUnifiedOrder {
     private static Log log = LogFactory.getLog(WxUnifiedOrder.class);
     private WXPay wxpay;
     private WXPayConfigImpl config;
+    String OpenId;
+    String TotalFee;
 
     public WxUnifiedOrder() throws Exception {
         config = WXPayConfigImpl.getInstance();
         wxpay = new WXPay(config);
+    }
+
+    private void ParseArgv(String Argv) {
+        String[] ArgvList = Argv.split(",");
+        OpenId = ArgvList[0];
+        TotalFee = ArgvList[1];
+        log.info("OpenId:" + OpenId + ",TotalFee:" + TotalFee + ".");
     }
 
     private String GetTradeNo() {
@@ -50,17 +59,18 @@ public class WxUnifiedOrder {
         return ExpireTime;
     }
 
-    public String UnifiedOrder(String Openid) {
+    public String UnifiedOrder(String Argv) {
         HashMap<String, String> data = new HashMap<String, String>();
+        ParseArgv(Argv);
         data.put("body", "益爱海蓓课程支付");
         data.put("out_trade_no", GetTradeNo());
         data.put("fee_type", "CNY");
-        data.put("total_fee", "1");
+        data.put("total_fee", this.TotalFee);
         data.put("spbill_create_ip", "0.0.0.0");
         data.put("notify_url", "http://test.letiantian.me/wxpay/notify");
         data.put("trade_type", "JSAPI");
         data.put("time_expire", GetExpireTime());
-        data.put("openid", Openid);
+        data.put("openid", this.OpenId);
 
         try {
             Map<String, String> r = wxpay.unifiedOrder(data);
@@ -74,9 +84,9 @@ public class WxUnifiedOrder {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("WxUnifiedOrder begin.\n");
+        log.info("WxUnifiedOrder begin.");
         WxUnifiedOrder order = new WxUnifiedOrder();
-        order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o");
-        System.out.println("\nWxUnifiedOrder end.");
+        order.UnifiedOrder("oMDigwQEv-nmXH29CIt0Hx5uCw3o, 299");
+        log.info("WxUnifiedOrder end.");
     }
 }
