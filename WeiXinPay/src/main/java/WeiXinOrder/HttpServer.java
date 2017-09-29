@@ -40,8 +40,8 @@ public class HttpServer {
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
-//            ChannelFuture f = b.bind("172.17.134.132", 8005).sync();
-            ChannelFuture f = b.bind("172.17.134.132", 8006).sync();
+            ChannelFuture f = b.bind("172.17.134.132", 8005).sync();
+//            ChannelFuture f = b.bind("172.17.134.132", 8006).sync();
             log.info("Http Server begin.");
 
             f.channel().closeFuture().sync();
