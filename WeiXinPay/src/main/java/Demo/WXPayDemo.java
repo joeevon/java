@@ -65,8 +65,8 @@ public class WxPayDemo {
     public void doOrderQuery() {
         System.out.println("查询订单");
         HashMap<String, String> data = new HashMap<String, String>();
-        data.put("out_trade_no", out_trade_no);
-//        data.put("transaction_id", "4008852001201608221962061594");
+//        data.put("out_trade_no", "20170929-152621-1506669981156");
+        data.put("transaction_id", "4200000025201709294953514938");
         try {
             Map<String, String> r = wxpay.orderQuery(data);
             System.out.println(r);
@@ -235,8 +235,8 @@ public class WxPayDemo {
         WxPayDemo dodo = new WxPayDemo();
         // dodo.doGetSandboxSignKey();
 
-        dodo.doUnifiedOrder();
-        // dodo.doOrderQuery();
+//        dodo.doUnifiedOrder();
+        dodo.doOrderQuery();
         // dodo.doDownloadBill();
         // dodo.doShortUrl();
         // dodo.test001();

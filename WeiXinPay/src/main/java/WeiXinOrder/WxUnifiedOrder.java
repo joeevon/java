@@ -67,8 +67,9 @@ public class WxUnifiedOrder {
         data.put("fee_type", "CNY");
         data.put("total_fee", this.TotalFee);
         data.put("spbill_create_ip", "0.0.0.0");
-        data.put("notify_url", "http://paynotify.yiaitech.com/paynotify");
+        data.put("notify_url", "http://pay.yiaitech.com/notify");
         data.put("trade_type", "JSAPI");
+        data.put("sign_type", "MD5");
         data.put("time_expire", GetExpireTime());
         data.put("openid", this.OpenId);
 

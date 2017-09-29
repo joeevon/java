@@ -44,7 +44,8 @@ public class HttpClient {
             // Start the client.
             ChannelFuture f = b.connect(host, port).sync();
 
-            URI uri = new URI("http://127.0.0.1:8006");
+//            URI uri = new URI("http://127.0.0.1:8005/unifiedorder");
+            URI uri = new URI("http://127.0.0.1:8005/notify");
             String msg = "oMDigwQEv-nmXH29CIt0Hx5uCw3o,1";
             DefaultFullHttpRequest request = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET,
                     uri.toASCIIString(), Unpooled.wrappedBuffer(msg.getBytes("UTF-8")));

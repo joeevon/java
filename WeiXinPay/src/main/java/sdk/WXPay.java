@@ -1,7 +1,10 @@
 package sdk;
 
+import org.apache.commons.logging.Log;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class WXPay {
 
@@ -38,11 +41,12 @@ public class WXPay {
         this.notifyUrl = notifyUrl;
         this.autoReport = autoReport;
         this.useSandbox = useSandbox;
-        if (useSandbox) {
-            this.signType = WXPayConstants.SignType.MD5; // 沙箱环境
-        } else {
-            this.signType = WXPayConstants.SignType.HMACSHA256;
-        }
+//        if (useSandbox) {
+//            this.signType = WXPayConstants.SignType.MD5; // 沙箱环境
+//        } else {
+//            this.signType = WXPayConstants.SignType.HMACSHA256;
+//        }
+        this.signType = WXPayConstants.SignType.MD5; // 沙箱环境
         this.wxPayRequest = new WXPayRequest(config);
     }
 
@@ -92,11 +96,13 @@ public class WXPay {
         reqData.put("appid", config.getAppID());
         reqData.put("mch_id", config.getMchID());
         reqData.put("nonce_str", WXPayUtil.generateUUID());
-        if (WXPayConstants.SignType.MD5.equals(this.signType)) {
-            reqData.put("sign_type", WXPayConstants.MD5);
-        } else if (WXPayConstants.SignType.HMACSHA256.equals(this.signType)) {
-            reqData.put("sign_type", WXPayConstants.HMACSHA256);
-        }
+//        if (WXPayConstants.SignType.MD5.equals(this.signType)) {
+//            reqData.put("sign_type", WXPayConstants.MD5);
+//        } else if (WXPayConstants.SignType.HMACSHA256.equals(this.signType)) {
+//            reqData.put("sign_type", WXPayConstants.HMACSHA256);
+//        }
+        System.out.print("signType" + this.signType);
+        reqData.put("sign_type", WXPayConstants.MD5);
         reqData.put("sign", WXPayUtil.generateSignature(reqData, config.getKey(), this.signType));
         return reqData;
     }

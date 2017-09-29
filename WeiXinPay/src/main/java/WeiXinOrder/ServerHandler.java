@@ -23,32 +23,40 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
     private ByteBufToBytes reader;
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
-            throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         if (msg instanceof HttpRequest) {
-            HttpRequest request = (HttpRequest) msg;
+            request = (HttpRequest) msg;
             if (HttpHeaders.isContentLengthSet(request)) {
                 reader = new ByteBufToBytes((int) HttpHeaders.getContentLength(request));
             }
             log.info(request.getMethod() + "," + request.getUri());
         }
+
         if (msg instanceof HttpContent) {
             HttpContent httpContent = (HttpContent) msg;
             ByteBuf content = httpContent.content();
             reader.reading(content);
             content.release();
+            log.info(request.getMethod() + "," + request.getUri());
             if (reader.isEnd()) {
-                String resultStr = new String(reader.readFull());
-                log.info("recv client request, data:" + resultStr);
-                WxUnifiedOrder order = new WxUnifiedOrder();
-                String res = order.UnifiedOrder(resultStr);
-                FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res.getBytes()));
-                response.headers().set(CONTENT_TYPE, "text/plain");
-                response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
-                response.headers().set(CONNECTION, Values.KEEP_ALIVE);
-                log.info("respond client.");
-                ctx.write(response);
-                ctx.flush();
+                if (request.getUri().equals(new String("/unifiedorder"))) {
+                    String resultStr = new String(reader.readFull());
+                    log.info("unifiedorder recv client request, data:" + resultStr);
+                    WxUnifiedOrder order = new WxUnifiedOrder();
+                    String res = order.UnifiedOrder(resultStr);
+                    FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(res.getBytes()));
+                    response.headers().set(CONTENT_TYPE, "text/plain");
+                    response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
+                    response.headers().set(CONNECTION, Values.KEEP_ALIVE);
+                    log.info("respond client.");
+                    ctx.write(response);
+                    ctx.flush();
+                }
+
+                if (request.getUri().equals(new String("/notify"))) {
+                    String resultStr = new String(reader.readFull());
+                    log.info("notify recv client request, data:" + resultStr);
+                }
             }
         }
     }
