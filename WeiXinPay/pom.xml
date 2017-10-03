@@ -115,7 +115,8 @@
                         <manifest>
                             <!--<mainClWeiXinOrder.WxUnifiedOrderedOrderrder</mainClass>-->
                             <!--<mainClass>WeiXinOrder.HttpClient</mainClass>-->
-                            <mainClass>WeiXinOrder.HttpServer</mainClass>
+                            <!--<mainClass>WeiXinOrder.HttpServer</mainClass>-->
+                            <mainClass>mysql_test.mysql_test</mainClass>
                             <!--<mainClMina.MinaServerrver</mainClass>-->
                             <!--<mainClass>Mina.MinaClientEntry</mainClass>-->
                         </manifest>
